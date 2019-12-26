@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+        }
+        table {
+            border-collapse: collapse;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        table tr:first-child td {
+            background-color: #efefef;
+            color: #868686;
+            padding: 0;
+        }
+        table tr td:first-child {
+            background-color: #efefef;
+            color: #868686;
+        }
+        td {
+            border: 1px solid #d4d4d4;
+            padding: 5px 0px;
+            text-align: center;
+            cursor: default;
+            color: #000;
+        }
+        .col_span_hr {
+            width: 10px;
+            display: block;
+            border-left: 1px solid rgb(136, 136, 136);
+            position: absolute;
+            top: 0;
+            cursor: col-resize;
+        }
+        .row_span_hr {
+            height: 10px;
+            display: block;
+            border-top: 1px solid rgb(136, 136, 136);
+            position: absolute;
+            left: 0;
+            cursor: row-resize;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="40">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+        </colgroup>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>艾丽卡</td>
+            <td colspan="2" rowspan="2">艾丽卡</td>
+            <td>艾丽卡</td>
+            <td colspan="4">艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td colspan="4" rowspan="4">艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td colspan="3" rowspan="4">艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td rowSpan="4">艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+            <td>艾丽卡</td>
+        </tr>
+    </table>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/sel-cell.js"></script>
+</html>
