@@ -84,13 +84,15 @@ $(document).on('mouseup', () => {
 // 逻辑部分
 
 // 生成 table 标签元素数组
-function initTableArr() {
+function initTableArr () {
     let table = $('table')[0]
-    let rowcol_arr = [], row_arr = [], merge_arr = []
+    let rowcol_arr = [], merge_arr = []
     for (let tr_ind = 0; tr_ind < table.rows.length; tr_ind++) { table_arr.push([]) }
     for (let tr_ind = 0; tr_ind < table.rows.length; tr_ind++) {
         for (let td_ind = 0; td_ind < table.rows[tr_ind].cells.length; td_ind++) {
             let td_item = table.rows[tr_ind].cells[td_ind]
+            // 如果是 sql 语句，就设置换行
+            if (td_item.innerText.substring(2, 7) === '$SQL=') $(td_item).css('white-space', 'normal')
             // 根据不同合并的 td 记录到对应的数组里
             if (td_item.colSpan > 1 && td_item.rowSpan === 1) {
                 for (let colSpan_i = 0; colSpan_i < td_item.colSpan; colSpan_i++) {
@@ -101,7 +103,7 @@ function initTableArr() {
                 for (let cell_i = 0; cell_i < td_ind; cell_i++) {
                     td_num += table.rows[tr_ind].cells[cell_i].colSpan
                 }
-                row_arr.push([tr_ind, td_num, tr_ind + td_item.rowSpan - 1, td_num + td_item.colSpan - 1, td_item])
+                rowcol_arr.push([tr_ind, td_num, tr_ind + td_item.rowSpan - 1, td_num + td_item.colSpan - 1, td_item])
             } else if (td_item.rowSpan > 1 && td_item.colSpan > 1) {
                 let td_num = 0
                 for (let cell_i = 0; cell_i < td_ind; cell_i++) {
@@ -113,27 +115,10 @@ function initTableArr() {
             }
         }
     }
-    rowcol_arr.forEach((item, ind) => {
-        rowcol_arr.forEach((item2, ind2) => {
-            if (ind !== ind2) {
-                if (item2[0] >= item[0] && item2[0] <= item[2]) {
-                    if (item2[1] === item[1]) {
-                        item2[1] = item[3] - item[1] + item2[1] + 1
-                        item2[3] = item2[1] + item2[4].colSpan - 1
-                    }
-                    if (item2[1] > item[1] && item2[1] <= item[3]) {
-                        item2[1] = item[3] - item[1] + item2[1] + 1
-                        item2[3] = item2[1] + item2[4].colSpan - 1
-                    }
-                }
-            }
-        })
-    })
-    merge_arr = rowcol_arr.concat(row_arr)
-    merge_arr.sort(function(a, b){
-        return a[1] - b[1]
-    })
-    merge_arr.forEach((item) => {
+    merge_arr = rowcol_arr.concat()
+    merge_arr.sort((a, b) => a[1] - b[1])
+    initTableArr2(merge_arr)
+    merge_arr.forEach(function(item){
         let tr_num = item[0]
         let td_num = item[1]
         let td_item = item[4]
@@ -143,7 +128,20 @@ function initTableArr() {
             }
         }
     })
-    console.log(table_arr)
+}
+function initTableArr2 (arr) {
+    arr.forEach(function(item, ind){
+        arr.forEach(function(item2, ind2){
+            if (ind !== ind2) {
+                if (item[0] <= item2[0] && item[2] >= item2[0]) {	// 判断行
+                    if ((item[1] <= item2[1]) || (item[1] < item2[1] && item[3] >= item2[1])) {    // 判断列
+                        item2[1] = item[3] - item[1] + item2[1] + 1
+                        item2[3] = item2[1] + item2[4].colSpan - 1
+                    }
+                }
+            }
+        })
+    })
 }
 // 给 td 设置唯一标识
 function setTdSpan (table_arr) {
