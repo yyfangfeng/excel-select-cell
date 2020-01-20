@@ -6,7 +6,6 @@ let select_td_arr = []
 // 起止位置
 let start_end_data = {}
 
-
 // 设置选取框的样式
 let sel_html = `<div class="select_area"></div>`
 $('body').append($(sel_html))
@@ -91,8 +90,6 @@ function initTableArr () {
     for (let tr_ind = 0; tr_ind < table.rows.length; tr_ind++) {
         for (let td_ind = 0; td_ind < table.rows[tr_ind].cells.length; td_ind++) {
             let td_item = table.rows[tr_ind].cells[td_ind]
-            // 如果是 sql 语句，就设置换行
-            if (td_item.innerText.substring(2, 7) === '$SQL=') $(td_item).css('white-space', 'normal')
             // 根据不同合并的 td 记录到对应的数组里
             if (td_item.colSpan > 1 && td_item.rowSpan === 1) {
                 for (let colSpan_i = 0; colSpan_i < td_item.colSpan; colSpan_i++) {
@@ -116,8 +113,8 @@ function initTableArr () {
         }
     }
     merge_arr = rowcol_arr.concat()
-    merge_arr.sort((a, b) => a[1] - b[1])
     initTableArr2(merge_arr)
+    merge_arr.sort((a, b) => a[1] - b[1])
     merge_arr.forEach(function(item){
         let tr_num = item[0]
         let td_num = item[1]
