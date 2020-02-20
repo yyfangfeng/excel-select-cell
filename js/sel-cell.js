@@ -113,6 +113,7 @@ function initTableArr () {
         }
     }
     merge_arr = rowcol_arr.concat()
+    merge_arr.sort((a, b) => a[1] - b[1])
     initTableArr2(merge_arr)
     merge_arr.sort((a, b) => a[1] - b[1])
     merge_arr.forEach(function(item){
